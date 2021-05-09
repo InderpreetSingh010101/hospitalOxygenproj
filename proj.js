@@ -85,15 +85,15 @@ OsuppliersAdd.push(n);
         }
 }
 
-//To Display the no of Covid-19 cases & No of deaths in Delhi
+//To Display the no of new Covid-19 cases in 14 days & No of deaths in Delhi
    
 await tab.goto("https://news.google.com/covid19/map?hl=en-IN&mid=%2Fm%2F09f07&gl=IN&ceid=IN%3Aen");
 console.log(" ");
-await tab.waitForSelector(".fNm5wd.qs41qe .tIUMlb strong",{visible:true});
-let d  = await tab.$$(".fNm5wd.qs41qe .tIUMlb strong");
-console.log("TOTAL NO CASES REGISTERED IN A DAY   --> "+ await tab.evaluate(function(ele){return ele.innerText},d[0]));
-let d1  = await tab.$$(".fNm5wd.ckqIZ .tIUMlb strong");
-console.log("TOTAL NO DEATHS REGISTERED IN A DAY  -->  "+ await tab.evaluate(function(ele){return ele.innerText},d1[0]));
+await tab.waitForSelector(".DlOivf strong",{visible:true});
+let d  = await tab.$$(".DlOivf strong");
+console.log("TOTAL NO CASES REGISTERED IN 14 DAYs   --> "+ await tab.evaluate(function(ele){return ele.innerText},d[0]));
+let d1  = await tab.$$(".fNm5wd.ckqIZ .UvMayb");
+console.log("TOTAL NO DEATHS REGISTERED   -->  "+ await tab.evaluate(function(ele){return ele.innerText},d1[0]));
 
 
             console.log("---------=====Now Loading Latest news regarding covid-19=====---------");
